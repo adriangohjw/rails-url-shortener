@@ -1,5 +1,22 @@
 <div class="container">
   <h1>Rails URL Shortener</h1>
+  <br>
+
+  <%= form_with url: create_path, method: :post do |f| %>
+    <div class="row">
+      <div class="col-5">
+        <%= f.text_field :original_url, required: true, class: 'form-control' %>
+      </div>
+      <div class="col-5">
+        <%= f.text_field :shortened_path, required: true, class: 'form-control' %>
+      </div>
+      <div class="col-2">
+        <%= f.submit 'Create', class: 'btn btn-success btn-block' %>
+      </div>
+    </div>
+  <% end %>
+  <br>
+
   <table class="table table-striped">
   <thead>
     <tr>
